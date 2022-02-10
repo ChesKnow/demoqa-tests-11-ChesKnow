@@ -15,7 +15,7 @@ public class FirstJUnitTest {
     }
 
     @BeforeEach
-    void openBrowser() {
+     void openBrowser() {
         System.out.println("    Этот каждый аз перед");
     }
 
