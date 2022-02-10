@@ -1,30 +1,36 @@
 package junit;
 
-import com.codeborne.selenide.Selenide;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class FirstJUnitTest {
 
+    @BeforeAll
+    static void before() {
+        System.out.println("Этот метод один раз перед всеми");
+    }
+
+    @AfterAll
+    static void after() {
+        System.out.println("Этот метод один раз после всех");
+    }
+
     @BeforeEach
     void openBrowser() {
-        Selenide.open("https://ya.ru");
+        System.out.println("    Этот каждый аз перед");
     }
 
     @AfterEach
     void closeBrowser() {
-        Selenide.closeWebDriver();
+        System.out.println("    Этот каждый раз после");
     }
 
     @Test
     void textTest() {
-        // search for text
+        System.out.println("        Это сам тест первый");
     }
 
     @Test
     void videoTest() {
-        // search for video
+        System.out.println("        Это сам тест второй");
     }
 }
